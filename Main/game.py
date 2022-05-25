@@ -8,8 +8,12 @@ class Game:
 
     def calculateScore(self):
         score = 0
-        for i in self.rolls:
-            if(self.rolls[i]+self.rolls[i+1]==10 && i%2==0):
-                score+=10+self.rolls[i]
-            score += self.rolls[i]
+        i = 0
+        for frame in range(10):
+            if (self.rolls[i] + self.rolls[i + 1] == 10):
+                score += 10 + self.rolls[i + 2]
+                i += 2
+            else:
+                score += self.rolls[i] + self.rolls[i + 1]
+                i += 2
         return score
