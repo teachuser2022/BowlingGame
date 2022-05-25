@@ -21,7 +21,7 @@ class BowlingTest(unittest.TestCase):
         self.rollManys(1, 20)
         self.assertEqual(20,self.g.calculateScore())
 
-    @unittest.skip("reason for skipping")
+    # @unittest.skip("reason for skipping")
     def test_oneSpare(self):
         self.g.roll(5)
         self.g.roll(5)#spare

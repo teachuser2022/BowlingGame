@@ -8,6 +8,8 @@ class Game:
 
     def calculateScore(self):
         score = 0
-        for pinInRoll in self.rolls:
-            score += pinInRoll
+        for i in self.rolls:
+            if(self.rolls[i]+self.rolls[i+1]==10 && i%2==0):
+                score+=10+self.rolls[i]
+            score += self.rolls[i]
         return score
