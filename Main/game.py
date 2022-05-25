@@ -1,8 +1,13 @@
 class Game:
-    __score = 0
+    rolls: list = [0] * 20
+    currentRoll = 0
 
     def roll(self, pins):
-        self.__score+=pins
+        self.rolls[self.currentRoll] = pins
+        self.currentRoll += 1
 
     def calculateScore(self):
-        return self.__score
+        score = 0
+        for pinInRoll in self.rolls:
+            score += pinInRoll
+        return score
